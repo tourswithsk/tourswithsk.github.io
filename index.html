@@ -1,10 +1,712 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satheshkumar Perumal | Elite UAE Tour Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-blue: #0A2E36;
+            --light-gold: #F1E8C4;
+            --sand: #E5DCC3;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(to right, var(--dark-blue), #1a4a5a);
+            color: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 46, 54, 0.8), rgba(10, 46, 54, 0.8)), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-blue);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background: var(--light-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--white);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark-blue);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        /* Expertise Section */
+        .expertise {
+            background-color: var(--sand);
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .expertise-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .expertise-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .expertise-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .expertise-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+        
+        /* Value Proposition */
+        .value {
+            background: linear-gradient(to right, var(--dark-blue), #1a4a5a);
+            color: var(--white);
+        }
+        
+        .value-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .value-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--gold);
+        }
+        
+        .value-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            text-align: center;
+            border-top: 4px solid var(--gold);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: var(--dark-blue);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--sand);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-item::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: var(--gold);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.2;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(to right, var(--dark-blue), #1a4a5a);
+            color: var(--white);
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--dark-blue);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background: var(--light-gold);
+        }
+        
+        /* Footer */
+        footer {
+            background: #0A2029;
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is my new website hosted on GitHub Pages!</p>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">S.P.</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#value">Value</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Beyond the Itinerary: Curating the Soul of the UAE</h1>
+            <p>13+ Years of Insider Expertise · Elite Experience Curator · Strategic Storyteller</p>
+            <a href="#contact" class="btn">Connect With Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Satheshkumar Perumal">
+                </div>
+                <div class="about-text">
+                    <h3>Crafting Unforgettable UAE Experiences</h3>
+                    <p>I am a passionate and dynamic freelance UAE Tour Guide with over 13 years of experience in the UAE's tourism industry. While newly stepping into guiding, I bring a unique insider's perspective, having managed end-to-end inbound operations, MICE movements, leisure groups, and exclusive travel experiences across Dubai, Abu Dhabi, Sharjah, and the Northern Emirates.</p>
+                    <p>Having witnessed Dubai's transformation firsthand, I understand the city's hidden gems, emerging attractions, and evolving tourism landscape better than most. My career has been a masterclass in understanding what makes this destination tick—from coordinating with top DMCs and analyzing market trends to developing experiences that resonate with an international elite clientele.</p>
+                    <p>You are not hiring a beginner. You are acquiring 13 years of market intelligence, cultural wisdom, and guest-centric strategy personified.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Expertise & Strengths</h2>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>In-depth UAE Knowledge</h3>
+                    <p>Extensive expertise in Dubai, Abu Dhabi, Sharjah, and Northern Emirates attractions, with insights into both iconic landmarks and hidden gems.</p>
+                </div>
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>VIP & Luxury Handling</h3>
+                    <p>Proven ability to manage high-value clients with discretion, professionalism, and exceptional service standards.</p>
+                </div>
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Strong Industry Networks</h3>
+                    <p>Established relationships with hotels, DMCs, and activity providers for seamless premium experiences.</p>
+                </div>
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Cultural Interpretation</h3>
+                    <p>Rich storytelling that provides cultural insights and historical narratives to transform standard tours into immersive journeys.</p>
+                </div>
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Experience Curation</h3>
+                    <p>Skill in designing personalized, premium travel experiences that exceed expectations and create lasting memories.</p>
+                </div>
+                <div class="expertise-item">
+                    <div class="expertise-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Multilingual Communication</h3>
+                    <p>Fluent in English, Tamil, Telugu, Malayalam, and Hindi to connect with diverse clientele.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section id="value" class="value">
+        <div class="container">
+            <div class="section-title">
+                <h2>Value Proposition</h2>
+            </div>
+            <div class="value-content">
+                <h3>Why Partner With Me?</h3>
+                <p>I offer more than just guiding — I deliver curated, story-driven experiences tailored to your clients. My years in operations have given me insider access to premium services, exclusive activities, and hidden luxury experiences that elevate every itinerary.</p>
+                <p>Partnering with me ensures your guests receive a seamless, unforgettable, and culturally immersive journey that reflects positively on your brand and increases client satisfaction and retention.</p>
+                <p>My unique background allows me to anticipate needs, navigate challenges with ease, and provide the depth of knowledge that transforms a good experience into an extraordinary one.</p>
+                <a href="#contact" class="btn">Let's Collaborate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Services Offered</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-city fa-3x" style="color: #D4AF37;"></i>
+                    <h3>Private Guided Tours</h3>
+                    <p>City highlights, cultural immersion, shopping adventures, and customized itineraries across the UAE.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-glass-cheers fa-3x" style="color: #D4AF37;"></i>
+                    <h3>VIP Handling & Concierge</h3>
+                    <p>Exclusive experiences and personalized service for discerning clients and high-profile individuals.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-sun fa-3x" style="color: #D4AF37;"></i>
+                    <h3>Leisure Tour Management</h3>
+                    <p>Comprehensive planning and execution of leisure activities, desert safaris, and luxury experiences.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-ship fa-3x" style="color: #D4AF37;"></i>
+                    <h3>Yacht & Luxury Activities</h3>
+                    <p>Premium maritime experiences and exclusive activity coordination for elite travelers.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-briefcase fa-3x" style="color: #D4AF37;"></i>
+                    <h3>MICE Support</h3>
+                    <p>Expert management for meetings, incentives, conferences, exhibitions, and corporate groups.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-language fa-3x" style="color: #D4AF37;"></i>
+                    <h3>Multilingual Assistance</h3>
+                    <p>Services in English, Tamil, Telugu, Malayalam, and Hindi for diverse client needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonials</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-item">
+                    <p class="testimonial-text">Sathesh is a walking encyclopedia of Dubai — his passion, storytelling, and personal touch make every tour unforgettable. He brings insights that you simply can't get from typical guides.</p>
+                    <p class="testimonial-author">— Former Colleague, Senior Operations Manager</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">His 13+ years of UAE tourism experience make him a rare asset for any DMC or travel company. The depth of his knowledge about the region's transformation is truly impressive.</p>
+                    <p class="testimonial-author">— Travel Partner, Luxury DMC</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">Sathesh doesn't just guide; he crafts premium guest experiences that exceed expectations. His ability to handle VIP clients with discretion and professionalism is exceptional.</p>
+                    <p class="testimonial-author">— Industry Peer, Tourism Development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Let's Connect</h2>
+            </div>
+            <div class="contact-content">
+                <p>I am currently accepting select partnerships with premium travel agencies and destination management companies. Let's discuss how we can create exceptional experiences for your clients.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+971 50 723 4087</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>satheshk.p@outlook.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+971 50 723 4087</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Satheshkumar Perumal | Elite UAE Tour Guide & Experience Curator</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Simple animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.expertise-item, .service-item, .testimonial-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
 </body>
 </html>
