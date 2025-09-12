@@ -545,13 +545,142 @@
 </section>
 
 <!-- Expertise Section -->
-<section id="expertise" tabindex="-1">
-    <h2 class="section-title">Core Expertise & Strengths</h2>
-    <div class="expertise-grid">
-        <article class="expertise-item" tabindex="0">
-            <div class="expertise-icon" aria-hidden="true"><i class="fas fa-landmark"></i></div>
-            <h3>In-depth UAE Knowledge</h3>
-            <p>Extensive expertise in Dubai, Abu Dhabi, Sharjah, and Northern Emirates attractions, with insights into both iconic landmarks and hidden gems.</p>
-        </article>
-        <article class="expertise-item" tabindex="0">
-            <div class="expertise
+ /* Expertise Section */
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .expertise-item {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .expertise-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .expertise-icon {
+        font-size: 2.5rem;
+        color: #D4AF37;
+        margin-bottom: 15px;
+    }
+
+    .expertise-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: #0A2E36;
+    }
+
+    /* Services Section */
+    .services-link {
+        display: block;
+        text-align: center;
+        margin: 40px auto 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #D4AF37;
+        text-decoration: none;
+    }
+
+    .services-link:hover {
+        text-decoration: underline;
+    }
+
+    /* Contact Section */
+    .contact-container {
+        display: flex;
+        gap: 40px;
+        max-width: 900px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        color: #0A2E36;
+    }
+
+    .contact-form-section, .contact-info-section {
+        flex: 1 1 400px;
+    }
+
+    .contact-form-section h2, .contact-info-section h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #D4AF37;
+    }
+
+    .contact-form-section p {
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .contact-info-section p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .contact-submit-btn {
+        background: #D4AF37;
+        color: #0A2E36;
+        border: none;
+        padding: 12px 25px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .contact-submit-btn:hover {
+        background: #F1E8C4;
+    }
+
+    /* Footer */
+    footer {
+        background: #0A2029;
+        color: white;
+        text-align: center;
+        padding: 25px 20px;
+        font-size: 0.9rem;
+        margin-top: 60px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .title {
+            font-size: 2.5rem;
+        }
+
+        .little {
+            font-size: 1.5rem;
+        }
+
+        .contact-container {
+            flex-direction: column;
+        }
+    }
+</style>
