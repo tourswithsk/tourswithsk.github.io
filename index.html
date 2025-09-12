@@ -30,25 +30,26 @@
             overflow-x: hidden;
         }
 
+        /* Vertical Navigation */
         .vertical-nav {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    background: transparent;
-    box-shadow: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    z-index: 1000;
-    max-width: 90px;
-    width: 90px;
-    height: auto;
-}
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-left: 15px;
+            padding-right: 15px;
+            background: transparent;
+            box-shadow: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            z-index: 1000;
+            max-width: 90px;
+            width: 90px;
+            height: auto;
+        }
 
         .vertical-nav a {
             color: #333;
@@ -110,19 +111,18 @@
 
         /* Hero Section */
         #hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    background: #fafafa;
-    padding-left: 110px;
-    padding-right: 60px;
-}
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: #fafafa;
+            padding-left: 110px;
+            padding-right: 60px;
         }
 
         .slider-images {
@@ -222,7 +222,7 @@
             padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            padding-left: 110px; /* space for vertical nav */
+            padding-left: 110px;
             padding-right: 20px;
         }
 
@@ -510,11 +510,19 @@
 </nav>
 
 <!-- Hero Section -->
-<div class="logo-container">
-    <a href="https://drive.google.com/file/d/1nPalknrk4Tb_wZv9Maq8iAeltUaZWgqn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+<section id="hero" role="banner">
+    <div class="logo-container">
         <img src="https://drive.google.com/uc?export=view&id=1nPalknrk4Tb_wZv9Maq8iAeltUaZWgqn" alt="Satheshkumar Perumal Logo" class="hero-logo" loading="lazy" />
-    </a>
-</div>
+    </div>
+
+    <a href="#contact" class="say-hello" aria-label="Say Hello to Satheshkumar Perumal">Say Hello</a>
+
+    <div class="slider-images" aria-hidden="true">
+        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="https://drive.google.com/uc?export=download&id=1onTLO9bBXVE58QhFXZCaY85cwZY5PqDr" type="video/mp4">
+        </video>
+    </div>
+
     <div class="inner">
         <span class="little">Beyond the Itinerary:</span>
         <h1 class="title">
@@ -546,4 +554,4 @@
             <p>Extensive expertise in Dubai, Abu Dhabi, Sharjah, and Northern Emirates attractions, with insights into both iconic landmarks and hidden gems.</p>
         </article>
         <article class="expertise-item" tabindex="0">
-            <div class="expertise-icon
+            <div class="expertise
