@@ -56,50 +56,7 @@
             padding: 0 20px;
         }
         
-        /* Header & Navigation */
-        header {
-            background: linear-gradient(to right, var(--dark-blue), #1a4a5a);
-            color: var(--white);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--gold);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--gold);
-        }
+        /* Header & Navigation - REMOVED FROM FIRST PAGE */
         
         /* Hero Section */
         .hero {
@@ -109,7 +66,7 @@
             align-items: center;
             color: var(--white);
             text-align: center;
-            padding-top: 80px;
+            padding-top: 0;
             overflow: hidden;
         }
         .slider-images {
@@ -167,6 +124,18 @@
         @keyframes blink {
             from, to { border-color: transparent }
             50% { border-color: var(--gold) }
+        }
+
+        /* Logo in top right corner */
+        .logo {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+            z-index: 1000;
         }
 
         /* Section Styling */
@@ -441,27 +410,6 @@
             font-size: 0.9rem;
         }
 
-        /* Say Hello vertical link */
-        .say-hello {
-            position: fixed;
-            right: 5px;
-            top: 50%;
-            transform: translateY(-50%) rotate(-90deg);
-            color: var(--gold);
-            border-radius: 5px;
-            text-decoration: none;
-            z-index: 1000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            background: none;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        .say-hello:hover {
-            color: var(--light-gold);
-        }
-
         /* Share icon */
         .share-icon {
             position: fixed;
@@ -497,10 +445,6 @@
         }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
             .hero h1 {
                 font-size: 2.2rem;
             }
@@ -512,27 +456,21 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .logo {
+                font-size: 22px;
+                top: 15px;
+                right: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                <img src="upload/s2.png" alt="Logo" style="height: 40px; vertical-align: middle;" />
-                S.P.
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#value">Value</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </header>
+    <!-- Logo in top right corner -->
+    <div class="logo">
+        <img src="upload/s2.png" alt="Logo" style="height: 40px; vertical-align: middle;" />
+        S.P.
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -544,7 +482,6 @@
             <p>15+ Years of Insider Expertise · Elite Experience Curator · Strategic Storyteller</p>
             <a href="https://wa.me/+971507234087" class="btn">Connect With Me</a>
         </div>
-        <a href="#contact" class="say-hello">Say Hello</a>
         <div class="share-icon" title="Share">
             <i class="fa fa-share-alt" aria-hidden="true"></i>
         </div>
@@ -563,8 +500,6 @@
                 <div class="about-text">
                     <h3>Crafting Unforgettable UAE Experiences</h3>
                     <p>I am a passionate and dynamic freelance UAE Tour Guide with over 15+ years of experience in the UAE's Tourism Industry. While stepping into guiding, I bring a unique insider's perspective, having managed end-to-end inbound operations, MICE movements, leisure groups, and exclusive travel experiences across Dubai, Abu Dhabi, Sharjah, and the Northern Emirates.</p>
-                    <p>Having witnessed Dubai's transformation firsthand, I understand the city's hidden gems, emerging attractions,
-
                     <p>Having witnessed Dubai's transformation firsthand, I understand the city's hidden gems, emerging attractions, and evolving tourism landscape better. My career has been a masterclass in understanding what makes this destination tick—from coordinating with top DMCs and analyzing market trends to developing experiences that resonate with an international elite clientele.</p>
                     <p>You are not hiring a beginner. You are acquiring 15+ years of market intelligence, cultural wisdom, and guest-centric strategy personified.</p>
                 </div>
@@ -745,9 +680,9 @@
                 </div>
                 
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
@@ -757,7 +692,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 Satheshkumar Perumal | Elite UAE Tour Guide & Experience Curator</p>
+            <p>&copy; 2025 Satheshkumar Perumal | Elite UAE Tour Guide & Experience Curator</p>
         </div>
     </footer>
 
