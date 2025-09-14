@@ -1,3 +1,10 @@
+No, the code I provided is a partial modification focusing on the layout and navigation arrow changes you requested. To help you fully, here is the **complete updated HTML** with your original content integrated, the fullpage layout applied, and down arrows added for navigation between sections.
+
+---
+
+### Complete updated HTML with fullpage sections and down arrows:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Satheshkumar | Elite UAE Tour Guide</title>
 
-    <!-- Analytics Scripts from your second code -->
+    <!-- Analytics Scripts -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -38,7 +45,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
     <style>
-        /* Root colors from your first code */
+        /* Root colors */
         :root {
             --gold: #D4AF37;
             --dark-blue: #0A2E36;
@@ -56,14 +63,27 @@
 
         html, body {
             height: 100%;
+            margin: 0;
             font-family: 'Montserrat', sans-serif;
             color: #333;
             line-height: 1.6;
             background-color: #fafafa;
             scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
         }
 
-        /* ===== Vertical Navigation (from second code) ===== */
+        /* Fullpage sections */
+        .fullpage-section {
+            height: 100vh;
+            scroll-snap-align: start;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* ===== Vertical Navigation (from your original code) ===== */
         .vertical-nav {
             position: fixed;
             top: 50%;
@@ -256,9 +276,10 @@
             color: var(--dark-blue);
         }
 
-        /* Scroll arrow buttons */
-        .arrow-btn {
+        /* Scroll arrow buttons inside sections */
+        .section-arrow-down {
             position: absolute;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--gold);
@@ -274,26 +295,18 @@
             user-select: none;
         }
 
-        .arrow-down {
-            bottom: 20px;
-        }
-
-        .arrow-up {
-            top: 20px;
-        }
-
-        .arrow-btn:hover {
+        .section-arrow-down:hover {
             background: var(--light-gold);
         }
 
-        /* ===== Container for main content sections ===== */
+        /* Container for main content sections */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* ===== Section Titles ===== */
+        /* Section Titles */
         .section-title {
             text-align: center;
             margin-bottom: 60px;
@@ -319,10 +332,11 @@
             background: var(--gold);
         }
 
-        /* ===== About Section ===== */
+        /* About Section */
         #about, .about {
             background-color: var(--white);
             padding: 100px 0;
+            flex: 1 0 auto;
         }
 
         .about-content {
@@ -369,10 +383,11 @@
             font-size: 1.1rem;
         }
 
-        /* ===== Expertise Section ===== */
+        /* Expertise Section */
         #expertise, .expertise {
             background-color: var(--sand);
             padding: 100px 0;
+            flex: 1 0 auto;
         }
 
         .expertise-grid {
@@ -407,12 +422,13 @@
             color: var(--dark-blue);
         }
 
-        /* ===== Value Proposition ===== */
+        /* Value Proposition */
         #value, .value {
             background: linear-gradient(to right, var(--dark-blue), #1a4a5a);
             color: var(--white);
             padding: 100px 0;
             text-align: center;
+            flex: 1 0 auto;
         }
 
         .value-content {
@@ -432,10 +448,11 @@
             margin-bottom: 20px;
         }
 
-        /* ===== Services Section ===== */
+        /* Services Section */
         #services, .services {
             background-color: var(--white);
             padding: 100px 0;
+            flex: 1 0 auto;
         }
 
         .services-grid {
@@ -465,10 +482,11 @@
             color: var(--dark-blue);
         }
 
-        /* ===== Testimonials Section ===== */
+        /* Testimonials Section */
         #testimonials, .testimonials {
             background-color: var(--sand);
             padding: 100px 0;
+            flex: 1 0 auto;
         }
 
         .testimonials-grid {
@@ -510,11 +528,12 @@
             font-style: normal;
         }
 
-        /* ===== Contact Section ===== */
+        /* Contact Section */
         #contact, .contact {
             background: linear-gradient(to right, var(--dark-blue), #1a4a5a);
             color: var(--white);
             padding: 100px 0;
+            flex: 1 0 auto;
         }
 
         .contact-content {
@@ -567,7 +586,7 @@
             background: var(--light-gold);
         }
 
-        /* ===== Footer ===== */
+        /* Footer */
         footer {
             background: #0A2029;
             color: var(--white);
@@ -577,7 +596,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* ===== Responsive Design ===== */
+        /* Responsive Design */
         @media (max-width: 992px) {
             .about-content {
                 flex-direction: column;
@@ -596,377 +615,4 @@
         @media (max-width: 768px) {
             .vertical-nav {
                 left: 10px;
-                gap: 30px;
-            }
-            .vertical-nav a {
-                font-size: 0.9rem;
-            }
-            .hero-logo {
-                width: 100px;
-            }
-            .title {
-                font-size: 2.2rem;
-            }
-            .little {
-                font-size: 1.5rem;
-            }
-            .about-text p, .about-text h3 {
-                font-size: 1rem;
-            }
-            .expertise-grid, .services-grid, .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            .contact-info {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-    </style>
-</head>
-<body>     
-</body>
-        <a href="#value">Value.</a>
-        <a href="#services">Services.</a>
-        <a href="#testimonials">Testimonials.</a>
-        <a href="#contact">Contact.</a>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="pt-page page-layout hero agency" role="banner" aria-label="Hero Section">
-        <!-- Hero Section -->
-<section id="hero" class="pt-page page-layout hero agency" role="banner" aria-label="Hero Section">
-<section id="hero" class="pt-page page-layout hero agency" role="banner" aria-label="Hero Section">
-        <div class="logo-container">
-            <img src="AGT_Logo.png" alt="Satheshkumar Perumal Logo" class="hero-logo" />
-        </div>
-
-        <a href="#contact" class="say-hello" aria-label="Say Hello Contact Link">Say Hello</a>
-
-        <div class="inner">
-            <span class="little" style="font-size: xx-large;">Beyond the Itinerary: Curating the Soul of the UAE</span>
-            <h1 class="title" style="font-size:4rem;">
-                <span class="typewriter" id="typewriter-text"></span>
-            </h1>
-            <p style="font-size:1.5rem; margin-top: 1rem; color: var(--light-gold); font-weight: 300;">
-                15+ Years of Insider Expertise · Elite Experience Curator · Strategic Storyteller
-            </p>
-            <a href="https://wa.me/+971507234087" class="btn" aria-label="Connect With Me on WhatsApp">Connect With Me</a>
-        </div>
-
-        <div class="share-icon" role="button" tabindex="0" aria-label="Share this website">
-            <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </div>
-
-        <div class="slider-images" aria-hidden="true"></div>
-
-        <button class="arrow-btn arrow-down" onclick="scrollToSection('about')" aria-label="Scroll down to About section">↓</button>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about" role="region" aria-labelledby="about-title">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="about-title">About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-img" data-aos="fade-right">
-                    <img src="https://drive.google.com/thumbnail?id=1WRElxdhAi3v0NjH1lNH4YqZ--EX84_p7&sz-w1000" alt="Satheshkumar Perumal" />
-                </div>
-                <div class="about-text" data-aos="fade-left">
-                    <h3>Crafting Unforgettable UAE Experiences</h3>
-                    <p>I am a passionate and dynamic freelance UAE Tour Guide with over 15+ years of experience in the UAE's Tourism Industry. While stepping into guiding, I bring a unique insider's perspective, having managed end-to-end inbound operations, MICE movements, leisure groups, and exclusive travel experiences across UAE.</p>
-                    <p>Having witnessed Dubai's transformation firsthand, I understand the city's hidden gems, emerging attractions, and evolving tourism landscape better. My career has been a masterclass in understanding what makes this destination tick—from coordinating with top DMCs and analyzing market trends to developing experiences that resonate with an international elite clientele.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise" class="expertise" role="region" aria-labelledby="expertise-title">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="expertise-title">Core Expertise & Strengths</h2>
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-item" data-aos="zoom-in">
-                    <div class="expertise-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <h3>In-depth UAE Knowledge</h3>
-                    <p>Extensive expertise in Dubai, Abu Dhabi, Sharjah, and Northern Emirates attractions, with insights into both iconic landmarks and hidden gems.</p>
-                </div>
-                <div class="expertise-item" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="expertise-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <h3>VIP & Luxury Handling</h3>
-                    <p>Proven ability to manage high-value clients with discretion, professionalism, and exceptional service standards.</p>
-                </div>
-                <div class="expertise-item" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="expertise-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Strong Industry Networks</h3>
-                    <p>Established relationships with hotels, DMCs, and activity providers for seamless premium experiences.</p>
-                </div>
-                <div class="expertise-item" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="expertise-icon">
-                        <i class="fas fa-history"></i>
-                    </div>
-                    <h3>Cultural Interpretation</h3>
-                    <p>Rich storytelling that provides cultural insights and historical narratives to transform standard tours into immersive journeys.</p>
-                </div>
-                <div class="expertise-item" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="expertise-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Experience Curation</h3>
-                    <p>Skill in designing personalized, premium travel experiences that exceed expectations and create lasting memories.</p>
-                </div>
-                <div class="expertise-item" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="expertise-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Multilingual Communication</h3>
-                    <p>Fluent in English, Tamil, Telugu, Malayalam, and Hindi to connect with diverse clientele.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Proposition -->
-    <section id="value" class="value" role="region" aria-labelledby="value-title">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="value-title">Value Proposition</h2>
-            </div>
-            <div class="value-content" data-aos="fade-up">
-                <h3>Why Partner With Me?</h3>
-                <p>I offer more than just guiding — I deliver curated, story-driven experiences tailored to the Guest. My years in operations have given me insider access to premium services, exclusive activities, and hidden luxury experiences that elevate every itinerary.</p>
-                <p>Partnering with me ensures your guests receive a seamless, unforgettable, and culturally immersive journey that reflects positively on your brand and increases client satisfaction and retention.</p>
-                <p>My unique background allows me to anticipate needs, navigate challenges with ease, and provide the depth of knowledge that transforms a good experience into an extraordinary one.</p>
-                <a href="#contact" class="btn" aria-label="Let's Collaborate">Let's Collaborate</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services" role="region" aria-labelledby="services-title">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="services-title">Services Offered</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-item" data-aos="fade-up">
-                    <i class="fas fa-city fa-3x" style="color: var(--gold);"></i>
-                    <h3>Private Guided Tours</h3>
-                    <p>City highlights, cultural immersion, shopping adventures, and customized itineraries across the UAE.</p>
-                </div>
-                <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-glass-cheers fa-3x" style="color: var(--gold);"></i>
-                    <h3>VIP Handling & Concierge</h3>
-                    <p>Exclusive experiences and personalized service for discerning clients and high-profile individuals.</p>
-                </div>
-                <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-sun fa-3x" style="color: var(--gold);"></i>
-                    <h3>Leisure Tour Management</h3>
-                    <p>Comprehensive planning and execution of leisure activities, desert safaris, and luxury experiences for Individual Travellers & Travel Groups.</p>
-                </div>
-                <div class="service-item" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-ship fa-3x" style="color: var(--gold);"></i>
-                    <h3>Yacht & Luxury Activities</h3>
-                    <p>Premium maritime experiences and exclusive activity coordination for elite travelers.</p>
-                </div>
-                <div class="service-item" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-briefcase fa-3x" style="color: var(--gold);"></i>
-                    <h3>MICE Support</h3>
-                    <p>Expert management for meetings, incentives, conferences, exhibitions, and corporate groups.</p>
-                </div>
-                <div class="service-item" data-aos="fade-up" data-aos-delay="500">
-                    <i class="fas fa-language fa-3x" style="color: var(--gold);"></i>
-                    <h3>Adventure & Sports</h3>
-                    <p>Experience the best of Dubai's adventure: from desert safaris to deep-sea fishing. Unleash your inner explorer with me.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials" role="region" aria-labelledby="testimonials-title">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="testimonials-title">Testimonials</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-item" data-aos="fade-up">
-                    <p class="testimonial-text">Sathesh is a walking encyclopedia of Dubai — his passion, storytelling, and personal touch make every tour unforgettable. He brings insights that you simply can't get from typical guides.</p>
-                    <p class="testimonial-author">— Former Colleague, Senior Operations Manager</p>
-                </div>
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                    <p class="testimonial-text">His 15+ years of UAE tourism experience make him a rare asset for any DMC or travel company. The depth of his knowledge about the region's transformation is truly impressive.</p>
-                    <p class="testimonial-author">— Travel Partner, Luxury DMC</p>
-                </div>
-                <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                    <p class="testimonial-text">Sathesh doesn't just guide; he crafts premium guest experiences that exceed expectations. His ability to handle VIP clients with discretion and professionalism is exceptional.</p>
-                    <p class="testimonial-author">— Industry Peer, Tourism Development</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact" role="region" aria-labelledby="contact-title">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="contact-title">Let's Connect</h2>
-            </div>
-            <div class="contact-content">
-                <p>I am currently accepting select partnerships with premium travel agencies and destination management companies. Let's discuss how we can create exceptional experiences for your clients.</p>
-                
-                <div class="contact-item">
-    <div class="contact-icon">
-        <i class="fas fa-phone" aria-hidden="true"></i>
-    </div>
-    <div>
-        <h3>Phone</h3>
-        <p><a href="tel:+971507234087" style="color: inherit; text-decoration: none;" onclick="window.open('tel:+971507234087', '_blank'); return false;">+971 50 723 4087</a></p>
-    </div>
-</div>
-<div class="contact-item">
-    <div class="contact-icon">
-        <i class="fas fa-envelope" aria-hidden="true"></i>
-    </div>
-    <div>
-        <h3>Email</h3>
-        <p><a href="mailto:tourswithsk@gmail.com" style="color: inherit; text-decoration: none;" onclick="window.open('mailto:tourswithsk@gmail.com', '_blank'); return false;">tourswithsk@gmail.com</a></p>
-    </div>
-</div>
-<div class="contact-item">
-    <div class="contact-icon">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-    </div>
-    <div>
-        <h3>WhatsApp</h3>
-        <p><a href="https://wa.me/971507234087?text=Hi%20I'm%20interested%20in%20your%20service" style="color: inherit; text-decoration: none;" target="_blank" rel="noopener noreferrer">+971 50 723 4087</a></p>
-    </div>
-</div>
-                <div class="social-links" aria-label="Social Media Links">
-    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <div class="container">
-            <p>&copy; 2025 Satheshkumar Perumal | Elite UAE Tour Guide & Experience Curator</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-    <script>
-        // Initialize AOS animations
-        AOS.init({
-            once: true,
-            duration: 800,
-        });
-
-        // Vegas slider initialization
-        $(".slider-images").vegas({
-            slides: [
-                { src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2070&q=80", fade: 2000 },
-                { src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2070&q=80", fade: 2000 },
-                { src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=2070&q=80", fade: 2000 },
-                { src: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2070&q=80", fade: 2000 },
-                { src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2070&q=80", fade: 2000 }
-            ],
-            delay: 8000,
-            animation: ['kenburns', 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight']
-        });
-
-        // Typewriter effect
-        const words = ["Dubai", "Abu Dhabi"];
-        let wordIndex = 0;
-        let letterIndex = 0;
-        let currentWord = '';
-        let isDeleting = false;
-        const speed = 200;
-        const typewriterElement = document.getElementById('typewriter-text');
-
-        function type() {
-            if (isDeleting) {
-                currentWord = words[wordIndex].substring(0, letterIndex - 1);
-                letterIndex--;
-            } else {
-                currentWord = words[wordIndex].substring(0, letterIndex + 1);
-                letterIndex++;
-            }
-
-            typewriterElement.innerHTML = `<span>${currentWord}</span>`;
-
-            if (!isDeleting && letterIndex === words[wordIndex].length) {
-                isDeleting = true;
-                setTimeout(type, 1000);
-            } else if (isDeleting && letterIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                setTimeout(type, 500);
-            } else {
-                setTimeout(type, isDeleting ? 100 : speed);
-            }
-        }
-        type();
-
-        // Smooth scrolling for vertical nav and buttons
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Scroll arrow buttons
-        function scrollToSection(id) {
-            const el = document.getElementById(id);
-            if (el) {
-                window.scrollTo({
-                    top: el.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            }
-        }
-        window.scrollToSection = scrollToSection;
-
-        // Share icon click (example: copy URL)
-        document.querySelector('.share-icon').addEventListener('click', () => {
-            if (navigator.share) {
-                navigator.share({
-                    title: document.title,
-                    url: window.location.href
-                }).catch(console.error);
-            } else {
-                // fallback: copy URL to clipboard
-                navigator.clipboard.writeText(window.location.href).then(() => {
-                    alert('Page URL copied to clipboard!');
-                });
-            }
-        });
-    </script>
-</body>
-</html>
+                gap:
